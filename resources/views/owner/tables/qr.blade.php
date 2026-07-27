@@ -58,8 +58,8 @@
                 <div class="flex flex-wrap items-center gap-3">
                     <a href="{{ route('owner.tables.qr.download', $table) }}"
                        class="inline-flex items-center gap-2 bg-primary text-on-primary px-5 py-2.5 rounded-xl text-label-md hover:opacity-90 transition-opacity shadow-sm">
-                        <span class="material-symbols-outlined text-[20px]">download</span>
-                        Download SVG
+                        <span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+                        Download PDF
                     </a>
                     <a href="{{ route('owner.tables.qr.print', $table) }}" target="_blank"
                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-label-md text-on-surface-variant border border-outline-variant hover:bg-surface-container transition-colors">

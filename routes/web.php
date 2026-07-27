@@ -17,10 +17,10 @@ use App\Http\Controllers\Cashier\OrderManagementController;
 use App\Http\Controllers\Cashier\ReceiptController;
 
 Route::get('/', function () {
-    return redirect('/menu');
+    return redirect()->route('login');
 });
 
-Route::get('/menu', [MenuController::class, 'index'])->name('menu.index');
+
 
 // Customer scan QR code → langsung ke halaman menu dengan nomor meja terisi otomatis
 Route::get('/order/{table}', [MenuController::class, 'showForTable'])->name('order.table');

@@ -95,19 +95,20 @@ class TableController extends Controller
     }
 
     /**
-     * Download QR Code as PNG or SVG.
+     * Download QR Code as PDF.
      */
-    public function downloadQr(RestaurantTable $table, Request $request)
+    public function downloadQr(RestaurantTable $table)
     {
-        $qrUrl     = url("/order/{$table->id}");
-        // Gunakan SVG — tidak membutuhkan ekstensi Imagick
-        $qrContent = QrCode::size(400)->generate($qrUrl);
-        $fileName  = "table-{$table->table_number}-qr.svg";
+        $qrUrl   = url("/order/{$table->id}");
+        $svgString = QrCode::size(300)->margin(2)->generate($qrUrl);
+        $qrImage = 'data:image/svg+xml;base64,' . base64_encode($svgString);
 
-        return response($qrContent, 200, [
-            'Content-Type'        => 'image/svg+xml',
-            'Content-Disposition' => "attachment; filename=\"{$fileName}\"",
-        ]);
+        $pdf = Pdf::loadView('owner.tables.qr-single-pdf', compact('table', 'qrUrl', 'qrImage'))
+            ->setPaper('a5', 'portrait');
+
+        $fileName = "qr-table-{$table->table_number}-" . now()->format('Ymd') . '.pdf';
+
+        return $pdf->download($fileName);
     }
 
     /**

@@ -45,12 +45,11 @@ class DashboardController extends Controller
             ->limit(5)
             ->get();
 
-        // ── Recent Manual Orders ──────────────────────────────────────────────
-        $recentManualOrders = Order::with(['items', 'payment'])
-            ->cashierOrders()
+        // ── Recent All Orders Today ───────────────────────────────────────────
+        $recentAllOrders = Order::with(['items', 'payment', 'restaurantTable'])
             ->today()
             ->orderByDesc('created_at')
-            ->limit(5)
+            ->limit(10)
             ->get();
 
         return view('cashier.dashboard', compact(
@@ -63,7 +62,7 @@ class DashboardController extends Controller
             'pendingOrders',
             'recentOrders',
             'incomingQrOrders',
-            'recentManualOrders',
+            'recentAllOrders',
         ));
     }
 }

@@ -43,16 +43,6 @@
             </button>
         </div>
 
-        {{-- Notes --}}
-        <div class="px-sm md:px-md pb-3 shrink-0" id="order-notes-section">
-            <label for="order-notes" class="text-label-md text-on-surface-variant block mb-1">Catatan (opsional)</label>
-            <textarea
-                id="order-notes"
-                rows="2"
-                class="w-full border border-outline-variant rounded-xl px-3 py-2 bg-surface-container-lowest text-body-md text-on-surface focus:outline-none focus:border-primary transition-colors resize-none placeholder:text-on-surface-variant"
-                placeholder="Contoh: tidak pedas, tanpa bawang..."
-            ></textarea>
-        </div>
 
         {{-- Footer --}}
         @php $taxRateValue = $taxRate ?? 0; @endphp

@@ -21,6 +21,7 @@
             min-height: 100vh;
             font-family: 'Courier New', Courier, monospace;
             font-size: 9pt;
+            font-weight: 700;
             color: #000;
             background: #e5e7eb;
         }
@@ -85,6 +86,14 @@
            KONTEN STRUK
         ══════════════════════════════════════════ */
 
+        /* Logo */
+        .rh-logo {
+            display: block;
+            margin: 0 auto 1.5mm;
+            width: 18mm;
+            height: auto;
+        }
+
         /* Header */
         .rh-name {
             text-align: center;
@@ -97,7 +106,7 @@
         .rh-tagline {
             text-align: center;
             font-size: 7.5pt;
-            color: #555;
+            color: #000;
             margin-bottom: 2mm;
         }
 
@@ -115,7 +124,7 @@
         .div-eq {
             text-align: center;
             font-size: 8pt;
-            color: #555;
+            color: #000;
             letter-spacing: 0.05em;
             margin: 1.5mm 0;
             overflow: hidden;
@@ -127,11 +136,12 @@
             display: flex;
             justify-content: space-between;
             font-size: 8pt;
+            font-weight: 700;
             margin-bottom: 0.8mm;
             gap: 4px;
         }
-        .info-lbl { color: #555; white-space: nowrap; }
-        .info-val { text-align: right; font-weight: 600; word-break: break-all; }
+        .info-lbl { color: #000; white-space: nowrap; font-weight: 700; }
+        .info-val { text-align: right; font-weight: 700; word-break: break-all; }
 
         /* Section title */
         .sec-title {
@@ -152,21 +162,23 @@
             padding: 1mm 0;
             border-bottom: 1px dashed #ddd;
             font-size: 8pt;
+            font-weight: 700;
         }
         .item-row:last-child { border-bottom: none; }
-        .item-name   { font-weight: 600; word-break: break-word; }
-        .item-note   { font-size: 7pt; color: #666; font-style: italic; grid-column: 1 / -1; margin-top: 0.3mm; }
-        .item-qty    { color: #555; white-space: nowrap; text-align: right; }
-        .item-price  { white-space: nowrap; text-align: right; font-weight: 600; }
+        .item-name   { font-weight: 700; word-break: break-word; }
+        .item-note   { font-size: 7pt; color: #000; font-style: italic; grid-column: 1 / -1; margin-top: 0.3mm; font-weight: 700; }
+        .item-qty    { color: #000; white-space: nowrap; text-align: right; font-weight: 700; }
+        .item-price  { white-space: nowrap; text-align: right; font-weight: 700; }
 
         /* Summary */
         .sum-row {
             display: flex;
             justify-content: space-between;
             font-size: 8pt;
+            font-weight: 700;
             padding: 0.6mm 0;
         }
-        .sum-lbl { color: #555; }
+        .sum-lbl { color: #000; font-weight: 700; }
 
         /* Total besar */
         .total-row {
@@ -199,7 +211,7 @@
         .foot-note {
             text-align: center;
             font-size: 7.5pt;
-            color: #555;
+            color: #000;
             line-height: 1.4;
         }
 
@@ -207,7 +219,7 @@
         .foot-inv {
             text-align: center;
             font-size: 7pt;
-            color: #888;
+            color: #000;
             margin-top: 1.5mm;
             letter-spacing: 0.1em;
         }
@@ -240,7 +252,8 @@
     <div class="receipt-card" id="receipt-content">
 
         {{-- Header --}}
-        <p class="rh-name">SmartDining</p>
+        <img src="{{ asset('images/logo.png') }}" alt="Zazil Bakery Logo" class="rh-logo" />
+        <p class="rh-name">Zazil Bakery</p>
         <p class="rh-tagline">Restoran &amp; Café</p>
 
         <hr class="div-solid" />
@@ -270,7 +283,7 @@
         </div>
         <div class="info-row">
             <span class="info-lbl">Kasir</span>
-            <span class="info-val">SmartDining Kasir</span>
+            <span class="info-val">Zazil Bakery Kasir</span>
         </div>
 
         <hr class="div-dash" />
@@ -279,7 +292,7 @@
         <p class="sec-title">Item Pesanan</p>
 
         {{-- Header kolom item --}}
-        <div style="display:grid; grid-template-columns:1fr auto auto; column-gap:2mm; font-size:7.5pt; color:#555; margin-bottom:1mm; padding-bottom:0.5mm; border-bottom:1px solid #000;">
+        <div style="display:grid; grid-template-columns:1fr auto auto; column-gap:2mm; font-size:7.5pt; color:#000; margin-bottom:1mm; padding-bottom:0.5mm; border-bottom:1px solid #000;">
             <span>Nama</span>
             <span style="text-align:right;">Qty</span>
             <span style="text-align:right;">Harga</span>
@@ -349,7 +362,7 @@
         {{-- Footer --}}
         <p class="foot-thanks">*** Terima Kasih! ***</p>
         <p class="foot-note">Kami harap dapat melihat Anda kembali</p>
-        <p class="foot-note">SmartDining · Restoran &amp; Café</p>
+        <p class="foot-note">Zazil Bakery · Restoran &amp; Café</p>
         <p class="foot-inv">{{ $order->invoice_number }}</p>
 
     </div>{{-- end receipt-card --}}

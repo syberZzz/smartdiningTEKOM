@@ -36,7 +36,7 @@
             </div>
             <p class="text-2xl font-bold text-emerald-600">{{ $completedToday }}</p>
             <p class="text-label-sm text-on-surface-variant mt-1">
-                Dari pesanan manual
+                Semua jenis pesanan
             </p>
         </div>
 
@@ -71,22 +71,38 @@
         {{-- Right Column --}}
         <div class="space-y-6 lg:col-span-2">
 
-            {{-- Recent Manual Orders --}}
+            {{-- All Orders Today --}}
             <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant shadow-sm overflow-hidden">
                 <div class="px-5 py-4 border-b border-outline-variant flex items-center justify-between">
                     <div class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;">point_of_sale</span>
-                        <h3 class="text-headline-md text-primary">Pesanan Manual</h3>
+                        <span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+                        <h3 class="text-headline-md text-primary">Semua Pesanan Hari Ini</h3>
                     </div>
-                    <a href="{{ route('cashier.orders.create') }}" class="text-label-sm text-primary hover:underline">+ Baru</a>
+                    <a href="{{ route('cashier.orders.index') }}" class="text-label-sm text-primary hover:underline">Lihat Semua</a>
                 </div>
                 <div class="divide-y divide-outline-variant">
-                    @forelse ($recentManualOrders as $order)
+                    @forelse ($recentAllOrders as $order)
                         <a href="{{ route('cashier.orders.show', $order) }}"
                            class="flex items-center gap-3 px-5 py-3 hover:bg-surface-container-low transition-colors group">
                             <div class="flex-1 min-w-0">
-                                <p class="text-label-md text-primary truncate">{{ $order->invoice_number }}</p>
-                                <p class="text-label-sm text-on-surface-variant">{{ $order->customer_name ?? 'Tamu' }} · {{ $order->items->count() }} item</p>
+                                <div class="flex items-center gap-2 mb-0.5">
+                                    <p class="text-label-md text-primary truncate">{{ $order->invoice_number }}</p>
+                                    {{-- Badge tipe pesanan --}}
+                                    @if($order->order_type === 'self')
+                                        <span class="inline-flex items-center gap-1 text-[10px] px-1.5 py-0.5 rounded-full bg-violet-50 text-violet-700 font-semibold shrink-0">
+                                            <span class="material-symbols-outlined text-[11px]">qr_code</span> QR
+                                        </span>
+                                    @else
+                                        <span class="inline-flex items-center gap-1 text-[10px] px-1.5 py-0.5 rounded-full bg-blue-50 text-blue-700 font-semibold shrink-0">
+                                            <span class="material-symbols-outlined text-[11px]">point_of_sale</span> POS
+                                        </span>
+                                    @endif
+                                </div>
+                                <p class="text-label-sm text-on-surface-variant">
+                                    {{ $order->customer_name ?? ($order->restaurantTable ? 'Meja '.$order->restaurantTable->table_number : 'Tamu') }}
+                                    · {{ $order->items->count() }} item
+                                    · {{ $order->created_at->format('H:i') }}
+                                </p>
                             </div>
                             <div class="text-right flex-shrink-0">
                                 <p class="text-label-md text-primary font-semibold">Rp{{ number_format($order->total_price, 0, ',', '.') }}</p>
@@ -105,7 +121,7 @@
                     @empty
                         <div class="px-5 py-8 text-center">
                             <span class="material-symbols-outlined text-[36px] text-outline-variant mb-2 block">receipt</span>
-                            <p class="text-label-sm text-on-surface-variant">Belum ada pesanan manual hari ini.</p>
+                            <p class="text-label-sm text-on-surface-variant">Belum ada pesanan hari ini.</p>
                         </div>
                     @endforelse
                 </div>
@@ -116,9 +132,10 @@
                 <h3 class="text-headline-md text-primary mb-4">Ringkasan Hari Ini</h3>
                 <div class="space-y-3">
                     @foreach([
-                        ['label' => 'Pesanan Manual', 'value' => $manualOrdersToday, 'icon' => 'point_of_sale',    'color' => 'text-blue-600'],
-                        ['label' => 'Selesai',        'value' => $completedToday,    'icon' => 'task_alt',         'color' => 'text-emerald-600'],
-                        ['label' => 'Menunggu',       'value' => $pendingOrders,     'icon' => 'pending',          'color' => 'text-amber-500'],
+                        ['label' => 'Pesanan QR',     'value' => $qrOrdersToday,     'icon' => 'qr_code',        'color' => 'text-violet-600'],
+                        ['label' => 'Pesanan Manual', 'value' => $manualOrdersToday, 'icon' => 'point_of_sale',  'color' => 'text-blue-600'],
+                        ['label' => 'Selesai',        'value' => $completedToday,    'icon' => 'task_alt',       'color' => 'text-emerald-600'],
+                        ['label' => 'Menunggu',       'value' => $pendingOrders,     'icon' => 'pending',        'color' => 'text-amber-500'],
                     ] as $stat)
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-2">
