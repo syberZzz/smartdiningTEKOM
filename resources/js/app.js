@@ -28,8 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const reviewItemsEl = document.getElementById('order-review-items');
     const reviewEmpty = document.getElementById('order-review-empty');
     const reviewTotal = document.getElementById('order-review-total');
+    const reviewSubtotal = document.getElementById('order-review-subtotal');
+    const reviewTax = document.getElementById('order-review-tax');
     const notesSection = document.getElementById('order-notes-section');
     const reviewFooter = document.getElementById('order-review-footer');
+    const taxRate = parseFloat(reviewFooter?.dataset.taxRate || 0);
     const closeReviewBtn = document.getElementById('close-review-btn');
     const placeOrderBtn = document.getElementById('place-order-btn');
     const placeOrderLoading = document.getElementById('place-order-loading');
@@ -254,7 +257,12 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }).join('');
 
-        if (reviewTotal) reviewTotal.textContent = formatRupiah(totalPrice);
+        const taxAmount = Math.round(totalPrice * (taxRate / 100));
+        const grandTotal = totalPrice + taxAmount;
+
+        if (reviewSubtotal) reviewSubtotal.textContent = formatRupiah(totalPrice);
+        if (reviewTax) reviewTax.textContent = formatRupiah(taxAmount);
+        if (reviewTotal) reviewTotal.textContent = formatRupiah(grandTotal);
     }
 
     // Review sheet event listeners

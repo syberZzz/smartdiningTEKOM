@@ -361,7 +361,7 @@
 
         {{-- Footer --}}
         <p class="foot-thanks">*** Terima Kasih! ***</p>
-        <p class="foot-note">Kami harap dapat melihat Anda kembali</p>
+        <p class="foot-note">Anda Senyum - Kami Bahagia</p>
         <p class="foot-note">Zazil Bakery · Restoran &amp; Café</p>
         <p class="foot-inv">{{ $order->invoice_number }}</p>
 

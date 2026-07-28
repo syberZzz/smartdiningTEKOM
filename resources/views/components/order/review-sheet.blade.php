@@ -47,6 +47,7 @@
         {{-- Footer --}}
         @php $taxRateValue = $taxRate ?? 0; @endphp
         <div class="border-t border-outline-variant px-sm md:px-md py-sm bg-surface shrink-0" id="order-review-footer"
+             data-tax-rate="{{ $taxRateValue }}"
              x-data="{ taxRate: {{ $taxRateValue }} }">
             <div class="space-y-2 mb-3">
                 <div class="flex justify-between items-center">
