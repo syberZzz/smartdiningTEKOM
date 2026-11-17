@@ -18,7 +18,7 @@
         .qr-card {
             text-align: center;
             padding: 40px;
-            border: 2px solid #D32F2F;
+            border: 2px solid #1B3856;
             border-radius: 24px;
             max-width: 400px;
             width: 100%;
@@ -26,7 +26,7 @@
         .qr-card h1 {
             font-size: 24px;
             font-weight: 700;
-            color: #D32F2F;
+            color: #1B3856;
             margin-bottom: 4px;
         }
         .qr-card .subtitle {
@@ -46,7 +46,7 @@
         .qr-card .table-number {
             font-size: 48px;
             font-weight: 700;
-            color: #D32F2F;
+            color: #1B3856;
             margin-bottom: 8px;
         }
         .qr-card .instruction {
@@ -63,13 +63,13 @@
         }
         @media print {
             body { background: #fff; }
-            .qr-card { border: 2px solid #D32F2F; }
+            .qr-card { border: 2px solid #1B3856; }
         }
     </style>
 </head>
 <body>
     <div class="qr-card">
-        <h1>Zazil Bakery</h1>
+        <h1>Smart Dining</h1>
         <p class="subtitle">Scan to Order</p>
 
         <div class="qr-image">

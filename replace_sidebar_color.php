@@ -1,7 +1,7 @@
 <?php
 $dir = new RecursiveIteratorIterator(new RecursiveDirectoryIterator('.'));
 $search = ['#B71C1C', '#B71C1C'];
-$replace = '#bc1616ff';
+$replace = '#00aaffff';
 foreach ($dir as $file) {
     if ($file->isFile() && in_array($file->getExtension(), ['php', 'js', 'css', 'blade'])) {
         $content = file_get_contents($file->getPathname());

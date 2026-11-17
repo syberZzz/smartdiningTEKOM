@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Login — Zazil Bakery')
+@section('title', 'Login — Smart Dining')
 
 @push('styles')
 <style>
     .login-bg {
-        background: linear-gradient(135deg, #4a0d0d 0%, #931515 50%, #d32f2f 100%);
+        background: linear-gradient(135deg, #0B1926 0%, #162E47 50%, #1B3856 100%);
         min-height: 100vh;
     }
 
@@ -34,8 +34,8 @@
     }
 
     .login-btn {
-        background: #ffffff;
-        color: #d32f2f;
+        background: linear-gradient(135deg, #E0C17E 0%, #C5A059 100%);
+        color: #14293E;
         transition: all 0.3s ease;
     }
 
@@ -94,9 +94,9 @@
         {{-- Logo & Title --}}
         <div class="text-center mb-8">
             <div class="w-20 h-20 bg-white rounded-2xl p-2 mx-auto mb-4 shadow-lg shadow-black/20 flex items-center justify-center">
-                <img src="{{ asset('images/logo.png') }}" alt="Zazil Bakery Logo" class="w-full h-full object-contain" />
+                <img src="{{ asset('images/logo.png') }}" alt="Smart Dining Logo" class="w-full h-full object-contain" />
             </div>
-            <h1 class="text-2xl font-bold text-white mb-1">Zazil Bakery</h1>
+            <h1 class="text-2xl font-bold text-white mb-1">Smart Dining</h1>
             <p class="text-sm text-white/50">Masuk ke dashboard Anda</p>
         </div>
 
@@ -129,7 +129,7 @@
                             value="{{ old('email') }}"
                             required
                             autofocus
-                            placeholder="nama@zazilbakery.com"
+                            placeholder="nama@smartdining.com"
                             class="login-input w-full pl-12 pr-4 py-3.5 rounded-xl text-sm"
                         />
                     </div>
@@ -155,7 +155,7 @@
                 <div class="flex items-center justify-between">
                     <label class="flex items-center gap-2 cursor-pointer group">
                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}
-                               class="w-4 h-4 rounded border-white/20 bg-white/5 text-red-500 focus:ring-red-500/20 focus:ring-offset-0" />
+                               class="w-4 h-4 rounded border-white/20 bg-white/5 text-[#C5A059] focus:ring-[#C5A059]/20 focus:ring-offset-0" />
                         <span class="text-xs text-white/50 group-hover:text-white/70 transition-colors">Ingat saya</span>
                     </label>
                 </div>
@@ -171,7 +171,7 @@
 
         {{-- Footer --}}
         <p class="text-center text-xs text-white/25 mt-6">
-            &copy; {{ date('Y') }} Zazil Bakery. All rights reserved.
+            &copy; {{ date('Y') }} Smart Dining. All rights reserved.
         </p>
 
     </div>

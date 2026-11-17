@@ -56,7 +56,7 @@
         .btn-print {
             width: 100%;
             padding: 10px;
-            background: #D32F2F;
+            background: #1B3856;
             color: #fff;
             border: none;
             border-radius: 8px;
@@ -65,7 +65,7 @@
             cursor: pointer;
             letter-spacing: 0.02em;
         }
-        .btn-print:hover { background: #162d4a; }
+        .btn-print:hover { background: #14293E; }
         .btn-back {
             display: block;
             width: 100%;
@@ -252,8 +252,8 @@
     <div class="receipt-card" id="receipt-content">
 
         {{-- Header --}}
-        <img src="{{ asset('images/logo.png') }}" alt="Zazil Bakery Logo" class="rh-logo" />
-        <p class="rh-name">Zazil Bakery</p>
+        <img src="{{ asset('images/logo.png') }}" alt="Smart Dining Logo" class="rh-logo" />
+        <p class="rh-name">Smart Dining</p>
         <p class="rh-tagline">Restoran &amp; Café</p>
 
         <hr class="div-solid" />
@@ -283,7 +283,7 @@
         </div>
         <div class="info-row">
             <span class="info-lbl">Kasir</span>
-            <span class="info-val">Zazil Bakery Kasir</span>
+            <span class="info-val">Smart Dining Kasir</span>
         </div>
 
         <hr class="div-dash" />
@@ -362,7 +362,7 @@
         {{-- Footer --}}
         <p class="foot-thanks">*** Terima Kasih! ***</p>
         <p class="foot-note">Anda Senyum - Kami Bahagia</p>
-        <p class="foot-note">Zazil Bakery · Restoran &amp; Café</p>
+        <p class="foot-note">Smart Dining · Restoran &amp; Café</p>
         <p class="foot-inv">{{ $order->invoice_number }}</p>
 
     </div>{{-- end receipt-card --}}

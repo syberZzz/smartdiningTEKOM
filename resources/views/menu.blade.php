@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Zazil Bakery - Menu')
+@section('title', 'Smart Dining - Menu')
 
 @push('meta')
     <meta name="table-number" content="{{ $tableNumber ?? '' }}" />

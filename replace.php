@@ -1,7 +1,7 @@
 <?php
 $dir = new RecursiveIteratorIterator(new RecursiveDirectoryIterator('resources/views'));
 $search = ['Lumière Dining', 'Lumière', 'Lumire', 'Lumire Dining'];
-$replace = 'Zazil Bakery';
+$replace = 'Smart Dining';
 foreach ($dir as $file) {
     if ($file->isFile() && $file->getExtension() === 'php') {
         $content = file_get_contents($file->getPathname());

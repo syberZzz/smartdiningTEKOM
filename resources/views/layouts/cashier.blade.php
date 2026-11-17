@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <meta name="description" content="Zazil Bakery — Dashboard Kasir" />
+    <meta name="description" content="Smart Dining — Dashboard Kasir" />
 
-    <title>@yield('title', 'Dashboard Kasir') — Zazil Bakery</title>
+    <title>@yield('title', 'Dashboard Kasir') — Smart Dining</title>
 
     {{-- Google Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,9 +45,9 @@
     >
         {{-- Logo --}}
         <div class="flex items-center gap-3 px-6 py-5 border-b border-white/10">
-            <img src="{{ asset('images/logo.png') }}" alt="Zazil Bakery Logo" class="h-10 w-10 object-contain bg-white rounded-md p-1" />
+            <img src="{{ asset('images/logo.png') }}" alt="Smart Dining Logo" class="h-10 w-10 object-contain bg-white rounded-md p-1" />
             <div>
-                <h1 class="text-lg font-bold leading-tight">Zazil Bakery</h1>
+                <h1 class="text-lg font-bold leading-tight">Smart Dining</h1>
                 <p class="text-xs text-white/60">Dashboard Kasir</p>
             </div>
         </div>

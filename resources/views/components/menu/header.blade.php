@@ -3,8 +3,8 @@
     <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-base w-full max-w-7xl mx-auto h-[64px]">
         {{-- Logo --}}
         <div class="flex items-center gap-xs">
-            <img src="{{ asset('images/logo.png') }}" alt="Zazil Bakery Logo" class="h-8 w-8 object-contain" />
-            <h1 class="text-headline-md font-bold text-primary">Zazil Bakery</h1>
+            <img src="{{ asset('images/logo.png') }}" alt="Smart Dining Logo" class="h-8 w-8 object-contain" />
+            <h1 class="text-headline-md font-bold text-primary">Smart Dining</h1>
         </div>
 
         {{-- Actions --}}

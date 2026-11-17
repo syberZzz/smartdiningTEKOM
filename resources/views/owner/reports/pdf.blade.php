@@ -6,14 +6,14 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Helvetica', 'Arial', sans-serif; font-size: 12px; color: #1a1c1c; padding: 40px; }
-        .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #D32F2F; padding-bottom: 15px; }
-        .header h1 { font-size: 22px; color: #D32F2F; margin-bottom: 4px; }
+        .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #1B3856; padding-bottom: 15px; }
+        .header h1 { font-size: 22px; color: #1B3856; margin-bottom: 4px; }
         .header p { font-size: 12px; color: #76777d; }
         .section { margin-bottom: 25px; }
-        .section h2 { font-size: 16px; color: #D32F2F; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px solid #e2e2e2; }
+        .section h2 { font-size: 16px; color: #1B3856; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px solid #e2e2e2; }
         .summary-grid { display: table; width: 100%; margin-bottom: 20px; }
         .summary-item { display: table-cell; text-align: center; padding: 10px; border: 1px solid #e2e2e2; }
-        .summary-item .value { font-size: 18px; font-weight: bold; color: #D32F2F; }
+        .summary-item .value { font-size: 18px; font-weight: bold; color: #1B3856; }
         .summary-item .label { font-size: 10px; color: #76777d; margin-top: 2px; }
         table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
         th { background-color: #f3f3f4; color: #45464d; font-size: 11px; font-weight: 600; text-align: left; padding: 8px 10px; border: 1px solid #e2e2e2; }
@@ -24,7 +24,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>Zazil Bakery — Business Report</h1>
+        <h1>Smart Dining — Business Report</h1>
         <p>Period: {{ \Carbon\Carbon::parse($startDate)->format('d M Y') }} — {{ \Carbon\Carbon::parse($endDate)->format('d M Y') }}</p>
     </div>
 
@@ -139,7 +139,7 @@
 
 
     <div class="footer">
-        <p>Generated on {{ now()->timezone('Asia/Jakarta')->format('d M Y, H:i') }} WIB — Zazil Bakery</p>
+        <p>Generated on {{ now()->timezone('Asia/Jakarta')->format('d M Y, H:i') }} WIB — Smart Dining</p>
     </div>
 </body>
 </html>

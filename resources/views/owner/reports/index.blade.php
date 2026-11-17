@@ -299,11 +299,11 @@
                     datasets: [{
                         label: 'Revenue',
                         data: monthlyData.map(d => d.revenue),
-                        borderColor: '#D32F2F',
-                        backgroundColor: 'rgba(30, 58, 95, 0.1)',
+                        borderColor: '#1B3856',
+                        backgroundColor: 'rgba(27, 56, 86, 0.1)',
                         fill: true,
                         tension: 0.4,
-                        pointBackgroundColor: '#D32F2F',
+                        pointBackgroundColor: '#C5A059',
                         pointRadius: 4,
                     }]
                 },

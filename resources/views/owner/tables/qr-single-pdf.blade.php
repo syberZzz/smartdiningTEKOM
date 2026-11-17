@@ -25,7 +25,7 @@
 
         /* ── Card ────────────────────── */
         .qr-card {
-            border: 3px solid #D32F2F;
+            border: 3px solid #1B3856;
             border-radius: 20px;
             padding: 32px 28px 24px;
             background: #fff;
@@ -34,7 +34,7 @@
         .brand-name {
             font-size: 22px;
             font-weight: 700;
-            color: #D32F2F;
+            color: #1B3856;
             letter-spacing: 0.3px;
             margin-bottom: 4px;
         }
@@ -63,7 +63,7 @@
         .table-number {
             font-size: 40px;
             font-weight: 700;
-            color: #D32F2F;
+            color: #1B3856;
             margin-bottom: 6px;
         }
 
@@ -103,7 +103,7 @@
 <body>
     <div class="wrapper">
         <div class="qr-card">
-            <div class="brand-name">Zazil Bakery</div>
+            <div class="brand-name">Smart Dining</div>
             <div class="scan-label">Scan to Order</div>
 
             <div class="qr-image">
@@ -123,7 +123,7 @@
         </div>
 
         <div class="footer">
-            Generated: {{ now()->timezone('Asia/Jakarta')->format('d M Y, H:i') }} WIB &bull; Zazil Bakery SmartDining
+            Generated: {{ now()->timezone('Asia/Jakarta')->format('d M Y, H:i') }} WIB &bull; Smart Dining SmartDining
         </div>
     </div>
 </body>

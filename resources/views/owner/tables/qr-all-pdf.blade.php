@@ -17,11 +17,11 @@
             text-align: center;
             margin-bottom: 20px;
             padding-bottom: 15px;
-            border-bottom: 2px solid #D32F2F;
+            border-bottom: 2px solid #1B3856;
         }
         .header h1 {
             font-size: 22px;
-            color: #D32F2F;
+            color: #1B3856;
             margin-bottom: 4px;
         }
         .header p {
@@ -48,7 +48,7 @@
 
         /* ── QR Card ────────────────────────────────── */
         .qr-card {
-            border: 2px solid #D32F2F;
+            border: 2px solid #1B3856;
             border-radius: 16px;
             padding: 20px;
             text-align: center;
@@ -58,7 +58,7 @@
         .qr-card .brand-name {
             font-size: 16px;
             font-weight: 700;
-            color: #D32F2F;
+            color: #1B3856;
             margin-bottom: 2px;
         }
         .qr-card .scan-label {
@@ -77,7 +77,7 @@
         .qr-card .table-number {
             font-size: 32px;
             font-weight: 700;
-            color: #D32F2F;
+            color: #1B3856;
             margin-bottom: 6px;
         }
         .qr-card .instruction {
@@ -113,7 +113,7 @@
 <body>
     {{-- Header --}}
     <div class="header">
-        <h1>Zazil Bakery — QR Codes</h1>
+        <h1>Smart Dining — QR Codes</h1>
         <p>{{ $tables->count() }} table(s) &bull; Generated: {{ now()->timezone('Asia/Jakarta')->format('d M Y, H:i') }} WIB</p>
         @if($statusFilter === 'available')
             <p style="margin-top: 4px; font-size: 10px;">Filter: Hanya meja Available</p>
@@ -129,7 +129,7 @@
                 @foreach ($pair as $table)
                     <div class="qr-cell">
                         <div class="qr-card">
-                            <div class="brand-name">Zazil Bakery</div>
+                            <div class="brand-name">Smart Dining</div>
                             <div class="scan-label">Scan to Order</div>
 
                             <div class="qr-image">
@@ -158,7 +158,7 @@
             @if (($chunkIndex + 1) % 3 === 0 && !$loop->last)
                 <div class="page-break"></div>
                 <div class="header" style="margin-top: 10px;">
-                    <h1>Zazil Bakery — QR Codes</h1>
+                    <h1>Smart Dining — QR Codes</h1>
                     <p>Continued — Page {{ floor($chunkIndex / 3) + 2 }}</p>
                 </div>
             @endif
@@ -167,7 +167,7 @@
 
     {{-- Footer --}}
     <div class="footer">
-        <p>Generated on {{ now()->timezone('Asia/Jakarta')->format('d M Y, H:i') }} WIB — Zazil Bakery &bull; SmartDining System</p>
+        <p>Generated on {{ now()->timezone('Asia/Jakarta')->format('d M Y, H:i') }} WIB — Smart Dining &bull; SmartDining System</p>
     </div>
 </body>
 </html>
